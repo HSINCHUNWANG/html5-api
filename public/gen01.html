@@ -32,6 +32,16 @@
         console.log(i);
     }
 
+    const obj = {};
+    obj[Symbol.iterator] = function* (){
+        for(let i=0; i<10; i++){
+            yield 10-i;
+        }
+    };
+    console.log( [...obj]);
+    for(let i of obj){
+        console.log(i);
+    }
 
     </script>
 </body>
