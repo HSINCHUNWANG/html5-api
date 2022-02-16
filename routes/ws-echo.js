@@ -7,7 +7,7 @@ const createEchoServer = server => {
     wsServer.on('connection', (ws, req)=>{
         console.log('size:', wsServer.clients.size );
         ws.on('message', message=>{
-            ws.send(message);
+            ws.send(message.toString());
         });
 
 
